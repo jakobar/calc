@@ -10,7 +10,7 @@ export default () => (
     <Helmet title="Home" />
 
     <Intro>
-      Opinionated starter by Ueno, using opinionated dependencies 🤪, <Highlight>TypeScript</Highlight>,&nbsp;
+      CALC, <Highlight>TypeScript</Highlight>,&nbsp;
       <Highlight>SCSS</Highlight>, <Highlight>CSS Modules</Highlight>, <Highlight>React Hooks</Highlight>,&nbsp;
       <Highlight>root resolver</Highlight>, <Highlight>code splitting</Highlight> and a lot of love.
     </Intro>
