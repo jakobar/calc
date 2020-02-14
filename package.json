@@ -1,23 +1,11 @@
 {
-  "name": "ueno-gatsby-starter",
-  "description": "Opinionated Gatsby starter by Ueno",
+  "name": "calcify",
+  "description": "Ultimate Calculator",
   "version": "1.0.0",
   "license": "MIT",
-  "keywords": [
-    "gatsby",
-    "starter",
-    "react",
-    "typescript",
-    "gatsby-starter",
-    "ueno"
-  ],
-  "contributors": [
-    "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
-    "Jérémy Barbet <jeremgraph@gmail.com>"
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ueno-llc/ueno-gatsby-starter"
+    "url": "https://calcify.jakobar.is"
   },
   "scripts": {
     "dev": "gatsby develop",
