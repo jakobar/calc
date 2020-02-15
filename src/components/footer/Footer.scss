@@ -15,6 +15,13 @@
     border-bottom: 10px solid #8effbf;
   }
 
+  &__logo {
+    svg { // stylelint-disable-line
+      height: $gutter;
+      fill: $color-darkblue;
+    }
+  }
+
   &__list {
     display: flex;
   }

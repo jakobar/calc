@@ -1,27 +1,49 @@
 $gutter: 30px;
+
 $container-gutter-mobile: $gutter;
 $container-gutter-tablet: 50px;
 $container-gutter-desktop: 70px;
 
-// grid
-$grid-column-count: 12;
-$grid-baseline: 16px;
-
 // page dimensions
-$page-width: 1290px;
-$page-limit: $page-width + ($container-gutter-desktop * 2);
+$page-width: 800px;
+$page-limit: 1400px;
+$limit: $page-width + ($container-gutter-desktop * 2);
 
 // Fonts
 $font-family: 'Roboto', sans-serif;
 $font-heading: 'Open Sans', sans-serif;
 $font-size: 16px;
-$font-size-min: 13px;
+$font-color: #333;
 $line-height: 1.5;
 
 // Colors
 $color-font: #333;
-$color-background: #fff;
+$color-background: #eee;
 $color-placeholder: #ddd;
+
+$color-darkblue: #0072f0;
+$color-lightblue: #7ebaff;
+
+$color-gradient-green: #00f7c4;
+
+$colors: (
+  'transparent': transparent,
+  'white': $color-white,
+  'grey': $color-ligter-grey,
+  'dark': $color-dark,
+  'dark-grey': $color-dark-grey,
+  'pink': $color-pink,
+  'green': $color-green,
+  'dos-green': $color-dos-green,
+  'light-green': $color-light-green,
+  'purple': $color-purple,
+  'yellow': $color-yellow,
+  'snap-yellow': $color-snap-yellow,
+  'gold': $color-gold,
+  'cgreen': $color-cgreen,
+  'light-purple': $color-light-purple,
+  'gradient-green': $color-gradient-green,
+);
 
 // Timings
 $transition-enter: 200ms;
@@ -29,6 +51,7 @@ $transition-leave: 500ms;
 
 // Custom break point (Min)
 $min-1800: 1800px;
+$min-1660: 1660px;
 $min-1440: 1440px;
 $min-1280: 1280px;
 $min-1200: 1200px;
@@ -48,6 +71,8 @@ $min-375: 375px;
 $min-360: 360px;
 
 // Custom break points (Max)
+$max-1660: 1659px;
+$max-1440: 1439px;
 $max-1280: 1279px;
 $max-1200: 1199px;
 $max-1080: 1079px;
@@ -65,19 +90,34 @@ $max-375: 374px;
 $max-360: 359px;
 
 // Predefined breakpoints
-$min-mobile: $min-420;
+$min-mobile: $min-480;
 $min-tablet: $min-720;
 $min-desktop: $min-1080;
+
+$max-mobile: $max-420;
+$max-tablet: $max-720;
+$max-desktop: $max-1080;
+
+// Forms
+$forms-height: 60px;
+$forms-height-mobile: 40px;
+
+// Product feature row height
+$featureHeight: 380px;
+
+// Custom breakpoint for checkout layout
+$min-checkout: $min-1024;
 
 // Segment
 $segment-padding-mobile: $gutter * 3;
 $segment-padding: 200px; //percentage-based segments spacing
 
-// Vertical scaling values.
-// remove this map to disable vertical scaling
-// value 1 = height breakpoint, value 2 = multiplier
-$scale: (
-  (920px, 0.975),
-  (800px, 0.95),
-  (690px, 0.925),
-);
+// Sticky bar
+$sticky-height: 110px;
+$sticky-height-mobile: 60px;
+
+// Product filter bar
+$filter-height: 110px;
+
+// Custom breakpoint for checkout layout
+$min-checkout: $min-1024;

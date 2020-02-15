@@ -3,6 +3,8 @@
 .header {
   display: block;
 
+  background: $color-darkblue;
+
   &__container {
     @include container;
   }
@@ -18,11 +20,11 @@
     &Svg {
       display: block;
 
-      height: 16px;
+      height: 24px;
       width: auto;
 
       @media (min-width: $min-768) {
-        height: 18px;
+        height: 30px;
       }
     }
   }
