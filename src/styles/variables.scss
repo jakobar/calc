@@ -4,6 +4,10 @@ $container-gutter-mobile: $gutter;
 $container-gutter-tablet: 50px;
 $container-gutter-desktop: 70px;
 
+// grid
+$grid-column-count: 12;
+$grid-baseline: 16px;
+
 // page dimensions
 $page-width: 800px;
 $page-limit: 1400px;
@@ -12,6 +16,7 @@ $limit: $page-width + ($container-gutter-desktop * 2);
 // Fonts
 $font-family: 'Roboto', sans-serif;
 $font-heading: 'Open Sans', sans-serif;
+$font-size-min: 14px;
 $font-size: 16px;
 $font-color: #333;
 $line-height: 1.5;
@@ -21,6 +26,7 @@ $color-font: #333;
 $color-background: #eee;
 $color-placeholder: #ddd;
 
+$color-white: #fff;
 $color-darkblue: #0072f0;
 $color-lightblue: #7ebaff;
 
@@ -29,20 +35,8 @@ $color-gradient-green: #00f7c4;
 $colors: (
   'transparent': transparent,
   'white': $color-white,
-  'grey': $color-ligter-grey,
-  'dark': $color-dark,
-  'dark-grey': $color-dark-grey,
-  'pink': $color-pink,
-  'green': $color-green,
-  'dos-green': $color-dos-green,
-  'light-green': $color-light-green,
-  'purple': $color-purple,
-  'yellow': $color-yellow,
-  'snap-yellow': $color-snap-yellow,
-  'gold': $color-gold,
-  'cgreen': $color-cgreen,
-  'light-purple': $color-light-purple,
-  'gradient-green': $color-gradient-green,
+  'darkblue': $color-darkblue,
+  'lightblue': $color-lightblue,
 );
 
 // Timings
