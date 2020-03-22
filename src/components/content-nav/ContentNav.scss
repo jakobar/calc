@@ -14,7 +14,7 @@
     padding: calc(25% - #{$gutter});
     margin: $gutter/2;
     height: 0;
-    width: calc(50% - $gutter);
+    width: calc(50% - #{$gutter});
 
     border-radius: 50%;
 
