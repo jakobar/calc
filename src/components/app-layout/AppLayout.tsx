@@ -27,31 +27,14 @@ export default ({ children }: IAppLayoutProps) => (
   <div className={s.layout}>
     <Helmet {...helmet} />
 
-    <Header>
-      <HeaderLink
-        name="about"
-        to="/about"
-      />
+    <Header />
 
-      <HeaderLink
-        name="github"
-        to="https://github.com/ueno-llc"
-        icon={<Github />}
-      />
-    </Header>
-
-    {children}
+    <main>
+      {children}
+    </main>
 
     <Footer
       logo={<JakobarLogo />}
-      social={[
-        { icon: <Dribbble />, to: 'https://dribbble.com/jakobar' },
-        { icon: <Twitter />, to: 'https://twitter.com/jakobarni' },
-        { icon: <Github />, to: 'https://github.com/jakobar' },
-        { icon: <Instagram />, to: 'https://www.instagram.com/jakobar_' },
-        { icon: <Facebook />, to: 'https://www.facebook.com/jakobar' },
-        { icon: <Linkedin />, to: 'https://www.linkedin.com/in/jakobar' },
-      ]}
     />
 
     {isDev && <Devtools />}

@@ -1,0 +1,35 @@
+@import '~styles/config';
+
+.contentNav {
+  @include container;
+
+  margin-top: $gutter;
+
+  &__row {
+    @include grid-row;
+  }
+
+  &__item {
+    @include grid-col(6/12);
+    padding: calc(25% - #{$gutter});
+    margin: $gutter/2;
+    height: 0;
+    width: calc(50% - $gutter);
+
+    border-radius: 50%;
+
+    background-color: $color-lightblue;
+  }
+
+  &__label {
+
+  }
+
+  &__icon {
+  }
+
+  &__svg {
+    height: 40px;
+    max-width: 100%;
+  }
+}

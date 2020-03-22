@@ -2,44 +2,39 @@ import * as React from 'react';
 
 import { Link as InternalLink } from 'components/link/Link';
 
-import s from './Link.scss';
+import s from './SmartLink.scss';
 
-interface ILinkProps {
-  name: string;
+interface ISmartLinkProps {
   to: string;
-  icon?: React.ReactNode;
+  label?: string;
+  children?: React.ReactNode;
 }
 
-export const Link = ({ name, to, icon }: ILinkProps) => {
+export const SmartLink = ({ label, to, children }: ISmartLinkProps) => {
   const isLink = (typeof to !== 'undefined');
   const isExternal = isLink && /^((https?:)?\/\/|[0-9a-zA-Z]+:)/.test(to || '');
-
-  const content = () => (
-    <>
-      {icon && React.cloneElement((icon as any), { className: s.link__icon })}
-      {name}
-    </>
-  );
 
   if (isExternal) {
     return (
       <a
-        className={s.link}
+        className={s.smartlink}
         target="_blank"
         rel="noopener noreferrer"
         href={to}
       >
-        {content()}
+        {label && label}
+        {children}
       </a>
     );
   }
 
   return (
     <InternalLink
-      className={s.link}
+      className={s.smartlink}
       to={to}
     >
-      {content()}
+      {label && label}
+      {children}
     </InternalLink>
   );
 };

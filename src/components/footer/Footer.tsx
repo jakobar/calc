@@ -11,11 +11,11 @@ interface ISocial {
 
 interface IFooterProps {
   logo: React.ReactNode;
-  social: ISocial[];
+  social?: ISocial[];
 }
 
 export const Footer = ({ logo, social }: IFooterProps) => (
-  <div className={s.footer}>
+  <footer className={s.footer}>
     <Container>
       <div className={s.footer__content}>
         <a
@@ -28,7 +28,7 @@ export const Footer = ({ logo, social }: IFooterProps) => (
         </a>
 
         <ul className={s.footer__list}>
-          {social.map((item) => (
+          {social && social.map((item) => (
             <li
               key={item.to}
               className={s.footer__item}
@@ -45,5 +45,5 @@ export const Footer = ({ logo, social }: IFooterProps) => (
         </ul>
       </div>
     </Container>
-  </div>
+  </footer>
 );

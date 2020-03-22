@@ -7,7 +7,7 @@ import Logo from 'assets/svg/calcify-logo.svg';
 import s from './Header.scss';
 
 interface IHeaderProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const Header = ({ children }: IHeaderProps) => (

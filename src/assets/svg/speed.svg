@@ -1,0 +1,9 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+	<path d="M182,286c0,91,74,165,165,165s165-74,165-165c0-85.9-66-156.7-150-164.3V91h30V61h-90v30h30v30.7
+		C248,129.3,182,200.1,182,286z M482,286c0,74.4-60.6,135-135,135s-135-60.6-135-135s60.6-135,135-135S482,211.6,482,286z"/>
+	<path d="M332,181v120h120v-30h-90v-90H332z"/>
+	<path d="M0,271h122v30H0V271z"/>
+	<path d="M30,181h122v30H30V181z"/>
+	<path d="M30,361h122v30H30V361z"/>
+</svg>
