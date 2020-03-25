@@ -14,41 +14,41 @@ export default class Tempature extends Component {
   };
 
   unitList: IUnit[] = [
-      {
-        id: 'c',
-        name: 'celcius',
-        code: '°C',
-        formulas: [{
-          id: 'f',
-          formula: '(x * (9/5)) + 32',
-        }, {
-          id: 'k',
-          formula: 'x + 273.15',
-        }],
-      }, {
+    {
+      id: 'c',
+      name: 'celcius',
+      code: '°C',
+      formulas: [{
         id: 'f',
-        name: 'farainheit',
-        code: '°F',
-        formulas: [{
-          id: 'c',
-          formula: '(x - 32) * (5/9)',
-        }, {
-          id: 'k',
-          formula: '(x + 459.67) * (5/9)',
-        }],
+        formula: '(x * (9/5)) + 32',
       }, {
         id: 'k',
-        name: 'kelvin',
-        code: '°K',
-        formulas: [{
-          id: 'c',
-          formula: 'x - 273.15',
-        }, {
-          id: 'f',
-          formula: '(x * 9/5) - 459.67',
-        }],
-      },
-    ];
+        formula: 'x + 273.15',
+      }],
+    }, {
+      id: 'f',
+      name: 'farainheit',
+      code: '°F',
+      formulas: [{
+        id: 'c',
+        formula: '(x - 32) * (5/9)',
+      }, {
+        id: 'k',
+        formula: '(x + 459.67) * (5/9)',
+      }],
+    }, {
+      id: 'k',
+      name: 'kelvin',
+      code: '°K',
+      formulas: [{
+        id: 'c',
+        formula: 'x - 273.15',
+      }, {
+        id: 'f',
+        formula: '(x * 9/5) - 459.67',
+      }],
+    },
+  ];
 
   render() {
     const { ui } = this.props;

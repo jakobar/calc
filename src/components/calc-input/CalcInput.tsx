@@ -37,7 +37,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
     console.log('onChangeUnitFrom e', e.target.value);
 
     const { unitList } = this.props;
-    const { fromValue, toValue, fromUnit, toUnit } = this.state;
+    const { fromValue, toValue, toUnit } = this.state;
 
     const eValue = e.target.value;
 
@@ -50,13 +50,33 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
 
       this.setState({
         toValue,
-        fromValue: expr.evaluate({ x: fromValue }),
+        fromValue: expr.evaluate({ x: toValue }),
+        fromUnit: eValue,
       });
     }
   }
 
   onChangeUnitTo = (e) => {
     console.log('onChangeUnitTo e', e.target.value);
+
+    const { unitList } = this.props;
+    const { fromValue, toValue, fromUnit } = this.state;
+
+    const eValue = e.target.value;
+
+    const unitListFrom = unitList.find((item) => (item.id === fromUnit));
+    const unitListTo = unitListFrom && unitListFrom.formulas.find((item) => (item.id === eValue));
+    const toFormula = unitListTo && unitListTo.formula;
+
+    if (toFormula) {
+      const expr = Parser.parse(toFormula);
+
+      this.setState({
+        fromValue,
+        toValue: expr.evaluate({ x: fromValue }),
+        toUnit: eValue,
+      });
+    }
   }
 
   onKeyUpInputFrom = (e) => {
@@ -87,7 +107,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
     }
   }
 
-  onChangeInputTo = (e) => {
+  onChangeInputTo = (e: any) => {
     const { unitList } = this.props;
     const { fromUnit, toUnit } = this.state;
 
@@ -107,19 +127,10 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
     }
   }
 
-  updateToInput = () => {
-
-  }
-
-  updateFromInput = () => {
-
-  }
-
   render() {
     const { unitList } = this.props;
 
     const { fromValue, toValue, fromUnit, toUnit } = this.state;
-
 
     console.log('this.state', this.state);
 
