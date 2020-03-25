@@ -2,7 +2,6 @@ export interface IUnit {
   id: string;
   name: string;
   code: string;
-  selected: string;
   formulas: IFormula[];
 }
 

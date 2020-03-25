@@ -18,7 +18,6 @@ export default class Tempature extends Component {
         id: 'c',
         name: 'celcius',
         code: '°C',
-        selected: 'd1',
         formulas: [{
           id: 'f',
           formula: '(x * (9/5)) + 32',
@@ -30,25 +29,23 @@ export default class Tempature extends Component {
         id: 'f',
         name: 'farainheit',
         code: '°F',
-        selected: 'd2',
         formulas: [{
           id: 'c',
-          formula: ' (x - 32) × 5/9',
+          formula: '(x - 32) * (5/9)',
         }, {
           id: 'k',
-          formula: '(x + 459.67) × 5/9',
+          formula: '(x + 459.67) * (5/9)',
         }],
       }, {
         id: 'k',
         name: 'kelvin',
         code: '°K',
-        selected: '',
         formulas: [{
           id: 'c',
           formula: 'x - 273.15',
         }, {
           id: 'f',
-          formula: '(x × 9/5) - 459.67',
+          formula: '(x * 9/5) - 459.67',
         }],
       },
     ];
