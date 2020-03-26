@@ -2,12 +2,12 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import Tempature from 'containers/Tempature/Tempature';
+import { Calc } from 'containers/calc/Calc';
 
 export default () => (
   <>
     <Helmet title="Tempature" />
 
-    <Tempature />
+    <Calc type="tempature" />
   </>
 );

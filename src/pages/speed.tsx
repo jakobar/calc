@@ -1,14 +1,13 @@
+
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import { Intro } from 'components/intro/Intro';
+import { Calc } from 'containers/calc/Calc';
 
 export default () => (
   <>
-    <Helmet title="About" />
+    <Helmet title="Speed" />
 
-    <Intro>
-      Speed page
-    </Intro>
+    <Calc type="speed" />
   </>
 );
