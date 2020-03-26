@@ -3,6 +3,8 @@ import { IUnit } from 'typings';
 
 import { Parser } from 'expr-eval';
 
+import { formatNumber } from 'utils/helpers';
+
 import s from './CalcInput.scss';
 
 interface ICalcInputProps {
@@ -33,11 +35,11 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
 
   }
 
-  onChangeUnitFrom = (e) => {
+  onChangeUnitFrom = (e: any) => {
     console.log('onChangeUnitFrom e', e.target.value);
 
     const { unitList } = this.props;
-    const { fromValue, toValue, toUnit } = this.state;
+    const { toValue, toUnit } = this.state;
 
     const eValue = e.target.value;
 
@@ -50,17 +52,17 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
 
       this.setState({
         toValue,
-        fromValue: expr.evaluate({ x: toValue }),
+        fromValue: formatNumber(expr.evaluate({ x: toValue })),
         fromUnit: eValue,
       });
     }
   }
 
-  onChangeUnitTo = (e) => {
+  onChangeUnitTo = (e: any) => {
     console.log('onChangeUnitTo e', e.target.value);
 
     const { unitList } = this.props;
-    const { fromValue, toValue, fromUnit } = this.state;
+    const { fromValue, fromUnit } = this.state;
 
     const eValue = e.target.value;
 
@@ -73,21 +75,21 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
 
       this.setState({
         fromValue,
-        toValue: expr.evaluate({ x: fromValue }),
+        toValue: formatNumber(expr.evaluate({ x: fromValue })),
         toUnit: eValue,
       });
     }
   }
 
-  onKeyUpInputFrom = (e) => {
+  onKeyUpInputFrom = (e: any) => {
     console.log('onKeyUpInputFrom e', e.target.value);
   }
 
-  onKeyUpInputTo = (e) => {
+  onKeyUpInputTo = (e: any) => {
     console.log('onKeyUpInputTo e', e.target.value);
   }
 
-  onChangeInputFrom = (e) => {
+  onChangeInputFrom = (e: any) => {
     const { unitList } = this.props;
     const { fromUnit, toUnit } = this.state;
 
@@ -102,7 +104,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
 
       this.setState({
         fromValue: eValue,
-        toValue: expr.evaluate({ x: eValue }),
+        toValue: formatNumber(expr.evaluate({ x: eValue })),
       });
     }
   }
@@ -122,7 +124,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
 
       this.setState({
         toValue: eValue,
-        fromValue: expr.evaluate({ x: eValue }),
+        fromValue: formatNumber(expr.evaluate({ x: eValue })),
       });
     }
   }
@@ -148,7 +150,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
             onChange={(e) => this.onChangeUnitFrom(e)}
             value={fromUnit}
           >
-            { unitList.map((unit: IUnit) => {
+            { unitList.filter((item) => item.id !== toUnit).map((unit: IUnit) => {
               return(
                 <option
                   key={unit.id}
@@ -172,7 +174,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
             onChange={(e) => this.onChangeUnitTo(e)}
             value={toUnit}
           >
-          { unitList.map((unit: IUnit) => {
+          { unitList.filter((item) => item.id !== fromUnit).map((unit: IUnit) => {
               return(
                 <option
                   key={unit.id}
