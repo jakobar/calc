@@ -11,7 +11,7 @@ interface ICalcInputProps {
   unitList: IUnit[];
 }
 
-export default class CalcInput extends React.Component<ICalcInputProps> {
+export class CalcInput extends React.Component<ICalcInputProps> {
 
   state = {
     fromValue: '',
@@ -39,35 +39,17 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
     console.log('onChangeUnitFrom e', e.target.value);
 
     const { unitList } = this.props;
-    const { toValue, toUnit } = this.state;
+    const { fromValue, toUnit, fromUnit } = this.state;
 
-    const eValue = e.target.value;
+    const newFromUnit = e.target.value;
+    let newToUnit = toUnit;
 
-    const unitListTo = unitList.find((item) => (item.id === toUnit));
-    const unitListFrom = unitListTo && unitListTo.formulas.find((item) => (item.id === eValue));
-    const fromFormula = unitListFrom && unitListFrom.formula;
-
-    if (fromFormula) {
-      const expr = Parser.parse(fromFormula);
-
-      this.setState({
-        toValue,
-        fromValue: formatNumber(expr.evaluate({ x: toValue })),
-        fromUnit: eValue,
-      });
+    if (newFromUnit === toUnit) {
+      newToUnit = fromUnit;
     }
-  }
 
-  onChangeUnitTo = (e: any) => {
-    console.log('onChangeUnitTo e', e.target.value);
-
-    const { unitList } = this.props;
-    const { fromValue, fromUnit } = this.state;
-
-    const eValue = e.target.value;
-
-    const unitListFrom = unitList.find((item) => (item.id === fromUnit));
-    const unitListTo = unitListFrom && unitListFrom.formulas.find((item) => (item.id === eValue));
+    const unitListFrom = unitList.find((item) => (item.id === newFromUnit));
+    const unitListTo = unitListFrom && unitListFrom.formulas.find((item) => (item.id === newToUnit));
     const toFormula = unitListTo && unitListTo.formula;
 
     if (toFormula) {
@@ -76,7 +58,37 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
       this.setState({
         fromValue,
         toValue: formatNumber(expr.evaluate({ x: fromValue })),
-        toUnit: eValue,
+        fromUnit: newFromUnit,
+        toUnit: newToUnit,
+      });
+    }
+  }
+
+  onChangeUnitTo = (e: any) => {
+    console.log('onChangeUnitTo e', e.target.value);
+
+    const { unitList } = this.props;
+    const { fromValue, toUnit, fromUnit } = this.state;
+
+    const newToUnit = e.target.value;
+    let newFromUnit = fromUnit;
+
+    if (newToUnit === fromUnit) {
+      newFromUnit = toUnit;
+    }
+
+    const unitListFrom = unitList.find((item) => (item.id === newFromUnit));
+    const unitListTo = unitListFrom && unitListFrom.formulas.find((item) => (item.id === newToUnit));
+    const toFormula = unitListTo && unitListTo.formula;
+
+    if (toFormula) {
+      const expr = Parser.parse(toFormula);
+
+      this.setState({
+        fromValue,
+        toValue: formatNumber(expr.evaluate({ x: fromValue })),
+        fromUnit: newFromUnit,
+        toUnit: newToUnit,
       });
     }
   }
@@ -134,7 +146,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
 
     const { fromValue, toValue, fromUnit, toUnit } = this.state;
 
-    console.log('this.state', this.state);
+    // console.log('this.state', this.state);
 
     return (
       <div className={s.calcInput}>
@@ -150,7 +162,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
             onChange={(e) => this.onChangeUnitFrom(e)}
             value={fromUnit}
           >
-            { unitList.filter((item) => item.id !== toUnit).map((unit: IUnit) => {
+            { unitList.map((unit: IUnit) => {
               return(
                 <option
                   key={unit.id}
@@ -174,7 +186,7 @@ export default class CalcInput extends React.Component<ICalcInputProps> {
             onChange={(e) => this.onChangeUnitTo(e)}
             value={toUnit}
           >
-          { unitList.filter((item) => item.id !== fromUnit).map((unit: IUnit) => {
+          { unitList.map((unit: IUnit) => {
               return(
                 <option
                   key={unit.id}

@@ -11,7 +11,7 @@ import Linkedin from 'assets/svg/linkedin.svg';
 
 import { helmet } from 'utils/helmet';
 import { Header } from 'components/header/Header';
-import { Link as HeaderLink } from 'components/header/Link';
+import { Link as HeaderLink } from 'components/smart-link/SmartLink';
 import { Footer } from 'components/footer/Footer';
 import { Devtools } from 'components/devtools/Devtools';
 

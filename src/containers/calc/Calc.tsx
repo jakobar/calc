@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import f from 'formulas';
 
 import { Container } from 'components/container/Container';
-import CalcInput from 'components/calc-input/CalcInput';
+import { CalcInput } from 'components/calc-input/CalcInput';
 
 export class Calc extends Component {
 
