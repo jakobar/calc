@@ -11,25 +11,59 @@
 
   &__item {
     @include grid-col(6/12);
-    padding: calc(25% - #{$gutter});
+
+    justify-content: center;
+    align-items: center;
+
     margin: $gutter/2;
-    height: 0;
+    padding: 0 $gutter/2;
+    height: 60px;
     width: calc(50% - #{$gutter});
 
-    border-radius: 50%;
+    border-radius: 60px;
 
-    background-color: $color-lightblue;
+    background-color: $color-white;
+    transition:
+      background-color 300ms ease-in-out,
+      color 300ms ease-in-out;
+
+    box-shadow: 0 20px 70px 0 rgba(32, 32, 32, 0.15);
+
+    &:hover {
+      background-color: $color-darkblue;
+      color: $color-white;
+    }
+
+    a { // stylelint-disable-line
+      @include reset-anchor;
+    }
+  }
+
+  &__item:hover &__svg {
+    fill: $color-white;
+  }
+
+  &__bg {
+    display: flex;
+    align-items: center;
   }
 
   &__label {
-
+    display: block;
+    @include responsive-font(18, 28);
+    order: 2;
+    margin-left: $gutter/2;
+    line-height: 60px;
   }
 
   &__icon {
+    display: flex;
+    order: 1;
   }
 
   &__svg {
-    height: 40px;
+    height: 30px;
     max-width: 100%;
+    transition: fill 300ms ease-in-out;
   }
 }

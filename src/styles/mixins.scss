@@ -159,3 +159,35 @@
     }
   }
 }
+
+
+// Colors generator
+@mixin colorify($type: color, $prefix: color) {
+  @each $color, $i in $colors {
+    &.#{$prefix}-#{$color} {
+      #{$type}: $i;
+    }
+  }
+}
+
+@mixin box-shadow-colors($size: 4px, $type: '') {
+  @each $color, $i in $colors {
+    &.color-#{$color} {
+      box-shadow: unquote($type) 0 0 0 $size $i;
+    }
+  }
+}
+
+@mixin buttons-hover() {
+  $opacity: 8%;
+
+  @each $color, $i in $colors {
+    &.color-#{$color} {
+      background-color: darken($i, $opacity);
+
+      transition-property: background-color, color;
+      transition-duration: 300ms;
+      transition-timing-function: ease-in-out;
+    }
+  }
+}

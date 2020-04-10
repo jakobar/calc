@@ -1,0 +1,31 @@
+@mixin btn-fill-colors() {
+  @each $color, $i in $colors {
+    &.fill-#{$color} path,
+    &.fill-#{$color} circle,
+    &.fill-#{$color} polygon,
+    &.fill-#{$color} rect { // stylelint-disable-line
+      fill: $i;
+    }
+  }
+}
+
+@mixin btn-stroke-colors() {
+  @each $color, $i in $colors {
+    &.stroke-#{$color} path,
+    &.stroke-#{$color} circle,
+    &.stroke-#{$color} polygon,
+    &.stroke-#{$color} line,
+    &.stroke-#{$color} polyline { // stylelint-disable-line
+      stroke: $i;
+    }
+  }
+}
+
+
+@mixin btn-box-shadow-colors() {
+  @each $color, $i in $colors {
+    &.box-shadow-#{$color} {
+      box-shadow: inset 0 0 0 2px $i;
+    }
+  }
+}

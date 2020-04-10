@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import f from 'formulas';
+import f from 'utils/formulas';
 
 import { Container } from 'components/container/Container';
 import { CalcInput } from 'components/calc-input/CalcInput';

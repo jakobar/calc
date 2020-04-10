@@ -16,38 +16,20 @@ export const ContentNav = ({ children }: IContentNavProps) => (
   <section className={s.contentNav}>
     <div className={s.contentNav__row}>
 
+    {links.subpages.map((subpage) => (
       <div className={s.contentNav__item}>
-        <SmartLink to={links.subpages.speed.link} >
-          <div className={s.contentNav__label}>
-            {links.subpages.speed.name}
-          </div>
-          <div className={s.contentNav__icon}>
-            <Speed className={s.contentNav__svg} />
-          </div>
+        <SmartLink to={subpage.link} >
+            <span className={s.contentNav__bg}>
+              <span className={s.contentNav__label}>
+                {subpage.name}
+              </span>
+              <span className={s.contentNav__icon}>
+                <Speed className={s.contentNav__svg} />
+              </span>
+            </span>
         </SmartLink>
       </div>
-
-      <div className={s.contentNav__item}>
-        <SmartLink to={links.subpages.mass.link} >
-          <div className={s.contentNav__label}>
-            {links.subpages.mass.name}
-          </div>
-          <div className={s.contentNav__icon}>
-            <Speed className={s.contentNav__svg} />
-          </div>
-        </SmartLink>
-      </div>
-
-      <div className={s.contentNav__item}>
-        <SmartLink to={links.subpages.tempature.link} >
-          <div className={s.contentNav__label}>
-            {links.subpages.tempature.name}
-          </div>
-          <div className={s.contentNav__icon}>
-            <Speed className={s.contentNav__svg} />
-          </div>
-        </SmartLink>
-      </div>
+    ))}
 
     </div>
   </section>
