@@ -1,8 +1,35 @@
 @import '~styles/config';
 
-$btn-height: 40px;
-$btn-border-width: 2px;
+$height: 100px;
 
 .calcInput {
+  &__inputWrapper {
+    position: relative;
+    margin-bottom: $gutter;
+
+    width: 100%;
+  }
+
+  &__input {
+    @include responsive-font(20, 70);
+
+    padding: 0 $height+$gutter 0 $gutter;
+
+    height: $height;
+    width: 100%;
+
+    line-height: $height;
+  }
+
+  &__select {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    padding-left: 20px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
 
 }

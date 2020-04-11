@@ -150,17 +150,19 @@ export class CalcInput extends React.Component<ICalcInputProps> {
 
     return (
       <div className={s.calcInput}>
-        <div className={s.calcInput__fromWrapper}>
+        <div className={s.calcInput__inputWrapper}>
           <input
             name="from"
             type="tel"
             onKeyDown={(e) => this.onKeyUpInputFrom(e)}
             onChange={(e) => this.onChangeInputFrom(e)}
             value={fromValue}
+            className={s(s.calcInput__input, 'from')}
           />
           <select
             onChange={(e) => this.onChangeUnitFrom(e)}
             value={fromUnit}
+            className={s(s.calcInput__select, 'from')}
           >
             { unitList.map((unit: IUnit) => {
               return(
@@ -174,17 +176,19 @@ export class CalcInput extends React.Component<ICalcInputProps> {
             })}
           </select>
         </div>
-        <div className={s.calcInput__toWrapper}>
+        <div className={s.calcInput__inputWrapper}>
           <input
             name="to"
             type="tel"
             onKeyUp={(e) => this.onKeyUpInputTo(e)}
             onChange={(e) => this.onChangeInputTo(e)}
             value={toValue}
+            className={s(s.calcInput__input, 'to')}
           />
           <select
             onChange={(e) => this.onChangeUnitTo(e)}
             value={toUnit}
+            className={s(s.calcInput__select, 'to')}
           >
           { unitList.map((unit: IUnit) => {
               return(
