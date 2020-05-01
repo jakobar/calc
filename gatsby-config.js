@@ -13,12 +13,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'ueno-gatsby-starter',
+        name: 'Calcify - Calcify your life',
         short_name: 'Calcify',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
-        display: 'minimal-ui',
+        display: 'standalone',
         icon: 'src/assets/images/favicon.png',
       },
     },
