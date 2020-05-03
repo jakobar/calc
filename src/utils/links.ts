@@ -14,8 +14,8 @@ export default {
       link: '/tempature',
     },
     {
-      name: 'Distance',
-      link: '/distance',
+      name: 'Length',
+      link: '/length',
     },
     {
       name: 'Volume',
