@@ -8,6 +8,7 @@ export default {
           id: 'celcius',
           name: 'Celcius',
           code: '°C',
+          system: ['metric', 'uk'],
           formulas: [{
             id: 'fahrenheit',
             formula: '(x * (9/5)) + 32',
@@ -19,6 +20,7 @@ export default {
           id: 'fahrenheit',
           name: 'Fahrenheit',
           code: '°F',
+          system: ['us'],
           formulas: [{
             id: 'celcius',
             formula: '(x - 32) * (5/9)',
@@ -30,6 +32,7 @@ export default {
           id: 'kelvin',
           name: 'Kelvin',
           code: '°K',
+          system: ['science'],
           formulas: [{
             id: 'celcius',
             formula: 'x - 273.15',
@@ -46,6 +49,7 @@ export default {
           id: 'tonne',
           name: 'Tonne',
           code: 'tonne',
+          system: ['metric'],
           formulas: [{
             id: 'kilogram',
             formula: 'x * 1000',
@@ -78,6 +82,7 @@ export default {
           id: 'kilogram',
           name: 'Kilogram',
           code: 'kg',
+          system: ['metric'],
           formulas: [{
             id: 'tonne',
             formula: 'x / 1000',
@@ -110,6 +115,7 @@ export default {
           id: 'gram',
           name: 'gram',
           code: 'g',
+          system: ['metric'],
           formulas: [{
             id: 'tonne',
             formula: 'x / 1e+6',
@@ -142,6 +148,7 @@ export default {
           id: 'milligram',
           name: 'Milligram',
           code: 'mg',
+          system: ['metric'],
           formulas: [{
             id: 'tonne',
             formula: 'x / 1e+9',
@@ -174,6 +181,7 @@ export default {
           id: 'microgram',
           name: 'Microgram',
           code: 'µg',
+          system: ['metric'],
           formulas: [{
             id: 'tonne',
             formula: 'x / 1e+12',
@@ -206,6 +214,7 @@ export default {
           id: 'imperialton',
           name: 'Imperialton',
           code: 'ipt',
+          system: ['uk'],
           formulas: [{
             id: 'tonne',
             formula: 'x * 1.016',
@@ -238,6 +247,7 @@ export default {
           id: 'uston',
           name: 'US ton',
           code: 'ust',
+          system: ['us'],
           formulas: [{
             id: 'tonne',
             formula: 'x / 1.102',
@@ -270,6 +280,7 @@ export default {
           id: 'stone',
           name: 'Stone',
           code: 'st',
+          system: ['uk'],
           formulas: [{
             id: 'tonne',
             formula: 'x / 157',
@@ -302,6 +313,7 @@ export default {
           id: 'pound',
           name: 'Pound',
           code: 'p',
+          system: ['us', 'uk'],
           formulas: [{
             id: 'tonne',
             formula: 'x / 2205',
@@ -334,6 +346,7 @@ export default {
           id: 'ounce',
           name: 'Ounce',
           code: 'Oz',
+          system: ['us', 'uk'],
           formulas: [{
             id: 'tonne',
             formula: 'x / 35274',
@@ -371,6 +384,7 @@ export default {
           id: 'milesPerHour',
           name: 'Miles per hour',
           code: 'm/h',
+          system: ['us', 'uk'],
           formulas: [{
             id: 'footPerSecond',
             formula: 'x * 1.467',
@@ -388,6 +402,7 @@ export default {
           id: 'footPerSecond',
           name: 'Foot per second',
           code: 'f/s',
+          system: ['us', 'uk'],
           formulas: [{
             id: 'milesPerHour',
             formula: 'x / 1.467',
@@ -405,6 +420,7 @@ export default {
           id: 'metersPerSecond',
           name: 'Meters per second',
           code: 'm/s',
+          system: ['metric'],
           formulas: [{
             id: 'milesPerHour',
             formula: 'x * 2.237',
@@ -422,6 +438,7 @@ export default {
           id: 'kilometersPerHour',
           name: 'Kilometres per hour',
           code: 'km/h',
+          system: ['metric'],
           formulas: [{
             id: 'milesPerHour',
             formula: 'x / 1.609',
@@ -439,6 +456,7 @@ export default {
           id: 'knot',
           name: 'Knot',
           code: 'knot',
+          system: ['uk'],
           formulas: [{
             id: 'milesPerHour',
             formula: 'x * 1.151',
@@ -461,6 +479,7 @@ export default {
           id: 'kilometre',
           name: 'Kilometre',
           code: 'km',
+          system: ['metric'],
           formulas: [{
             id: 'meters',
           formula: 'x * 1000',
@@ -496,6 +515,7 @@ export default {
           id: 'meters',
           name: 'Meters',
           code: 'm',
+          system: ['metric'],
           formulas: [{
             id: 'kilometers',
           formula: 'x / 1000',
@@ -531,6 +551,7 @@ export default {
           id: 'centimetres',
           name: 'Centimetres',
           code: 'cm',
+          system: ['metric'],
           formulas: [{
             id: 'kilometers',
           formula: 'x / 100000',
@@ -566,6 +587,7 @@ export default {
           id: 'millimetre',
           name: 'Millimetre',
           code: 'mm',
+          system: ['metric'],
           formulas: [{
             id: 'kilometers',
           formula: 'x / 1e+6',
@@ -601,6 +623,7 @@ export default {
           id: 'micrometre',
           name: 'Micrometre',
           code: 'µm',
+          system: ['metric'],
           formulas: [{
             id: 'kilometers',
           formula: 'x / 1e+9',
@@ -636,6 +659,7 @@ export default {
           id: 'nanometre',
           name: 'Nanometre',
           code: 'nm',
+          system: ['metric'],
           formulas: [{
             id: 'kilometers',
           formula: 'x / 1e+12',
@@ -671,6 +695,7 @@ export default {
           id: 'mile',
           name: 'Mile',
           code: 'mile',
+          system: ['us', 'uk'],
           formulas: [{
             id: 'kilometers',
           formula: 'x * 1.609',
@@ -706,6 +731,7 @@ export default {
           id: 'yard',
           name: 'Yard',
           code: 'yard',
+          system: ['us', 'uk'],
           formulas: [{
             id: 'kilometers',
           formula: 'x / 1094',
@@ -741,6 +767,7 @@ export default {
           id: 'foot',
           name: 'Foot',
           code: 'foot',
+          system: ['us', 'uk'],
           formulas: [{
             id: 'kilometers',
           formula: 'x / 3281',
@@ -776,6 +803,7 @@ export default {
           id: 'inch',
           name: 'Inch',
           code: 'in',
+          system: ['us', 'uk'],
           formulas: [{
             id: 'kilometers',
           formula: 'x / 39370',
@@ -811,6 +839,7 @@ export default {
           id: 'nautical mile',
           name: 'Nautical mile',
           code: 'nautical mile',
+          system: ['uk'],
           formulas: [{
             id: 'kilometers',
           formula: 'x * 1.852',
